@@ -22,7 +22,7 @@ public class DBConnectionTest01 {
 		Connection conn=null;
 		
 		try {
-			// 데이터 베이스 로딩 
+			//데이터 베이스와 연결할 드라이버 클래스를 찾아서 로드하는 역할
 			Class.forName(dbDriver);
 			
 			conn=DriverManager.getConnection(url,id,passwd);
