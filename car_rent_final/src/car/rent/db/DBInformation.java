@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBInformation {   //DB information(db와 관련된 정보 ) 위한 클래스 
 	private String dbDriver = "org.mariadb.jdbc.Driver";
-	private String url = "jdbc:mariadb://localhost:13306/rend_car";
+	private String url = "jdbc:mariadb://localhost:13306/tablename";
 	private String id = "root";
-	private String passwd = "tkfkd#486";
+	private String passwd = "passwd";
 	public String getDbDriver() {
 		return dbDriver;
 	}
