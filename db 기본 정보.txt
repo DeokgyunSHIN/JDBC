@@ -1,0 +1,47 @@
+
+제가 프로젝트를 하면서 데이터 베이스를 오타를 내서 rend_car 로 잡아서 url에 rend_car로 
+잡았습니다.
+
+insert into car_info (car_id,car_company,car_name,car_year,car_fuel,car_count,rent_count,rent_money)
+values ("1","현대","소나타",2022,"가솔린",20,0,17000);  //차량 정보
+
+insert into car_info (car_id,car_company,car_name,car_year,car_fuel,car_count,rent_count,rent_money)
+values ("2","현대","제네시스",2022,"디젤",220,0,34000); // 차량정보  
+
+
+
+
+create table user_info(
+
+user_id varchar(100) not null ,   
+user_name varchar(100) not null ,
+user_age int not null,
+user_phone varchar(100) not null ,
+user_licence_number varchar(100) not null,
+primary key (user_id)
+);
+
+create table car_info(
+car_id varchar(100) not null,
+car_company varchar(100) not null ,
+car_name varchar(100) not null ,
+car_year int not null comment '연식',
+car_fuel varchar(100) not null comment '가솔린/디젤/하이브리드/LPG/전기/수소',
+car_count int comment '소유 대수',
+rent_count int default 0 comment '렌트 대수',
+rent_money int not null,
+primary key (car_id)
+);
+
+
+create table rent_user_info (
+rent_seq int auto_increment,
+rent_user_id varchar(100) not null ,
+rent_car_id varchar(100) not null ,
+rent_days int default 1,
+rent_price int not null,
+rent_status char(1) comment '랜트상태, 대여중/반납완료',
+primary key (rent_seq),
+foreign key (rent_user_id) references user_info(user_id),
+foreign key (rent_car_id) references car_info(car_id));
+
