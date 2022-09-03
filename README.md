@@ -8,3 +8,4 @@ mariadb jar 파일을 넣어주기!!
  
  DBConnectionTest03 -> 자바에서 insert 해서 데이터베이스에 데이터 값 넣기  
 
+car_rent_final -> 렌트카 프로그램 
